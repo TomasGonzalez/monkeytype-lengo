@@ -9,6 +9,7 @@ const manifest: chrome.runtime.ManifestV3 = {
   version: packageJson.version,
   description: packageJson.description,
   options_page: "src/pages/options/index.html",
+  permissions: ["storage"],
   background: {
     service_worker: "src/pages/background/index.js",
     type: "module",
@@ -16,9 +17,6 @@ const manifest: chrome.runtime.ManifestV3 = {
   action: {
     default_popup: "src/pages/popup/index.html",
     default_icon: "icon-34.png",
-  },
-  chrome_url_overrides: {
-    newtab: "src/pages/newtab/index.html",
   },
   icons: {
     "128": "icon-128.png",
